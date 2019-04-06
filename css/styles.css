@@ -1,0 +1,52 @@
+
+.player0, .player1  {
+  background-color:  black;
+  width: 50%;
+  float: left;
+  height: 400px;
+  padding: 100px;
+  padding-top: 2em;
+  margin-top: 0.5em;
+  opacity: 0.5;
+  font-family: fantasy;
+}
+.buttons p {
+text-align: center;
+}
+h1 {
+  color: yellow;
+  font-size: 30px;
+  text-align: center;
+}
+.buttons  {
+  margin-top: 200px;
+  padding-right: 100px;
+  clear: left;
+}
+#output0  {
+  display: none;
+}
+#output1 {
+  display: none;
+}
+.intro {
+  ;
+
+}
+body  {
+  background-image: url("images/as.jpg");
+  background-size: cover;
+}
+.current-box  {
+  border-style: outset;
+}
+#head  {
+  text-align: center;
+  text-decoration-color: #ffc34d;
+}
+.playerone, .playertwo p {
+  font-family: fantasy;
+}
+.active {
+  opacity: 0.9;
+}
