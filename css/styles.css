@@ -7,7 +7,7 @@
   padding: 100px;
   padding-top: 2em;
   margin-top: 0.5em;
-  opacity: 0.5;
+  opacity: 0.908;
   font-family: fantasy;
 }
 .buttons p {
@@ -23,10 +23,7 @@ h1 {
   padding-right: 100px;
   clear: left;
 }
-#output0  {
-  display: none;
-}
-#output1 {
+#output {
   display: none;
 }
 .intro {
@@ -37,7 +34,7 @@ body  {
   background-image: url("images/cs.jpg");
   background-size: cover;
 }
-.current-box  {
+.box  {
   border-style: outset;
 }
 #head  {

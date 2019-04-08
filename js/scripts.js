@@ -1,21 +1,20 @@
 //business-logic
-//constructor for player
-function Player(rolledNumbers, tempScore, totalScore) {
-  this.rolledNumbers = rolledNumbers
-  this.tempScore = tempScore;
-  this.totalScore = totalScore;
+function Player(rolledNumbers, Score, total) {
+  var rolledNumbers = rolledNumbers
+  var Score = score;
+ var total = total;
 }
-Player.prototype.addTempScore = function() {
-  var totalTempScore = 0;
+Player.prototype.addScore = function() {
+  var total = 0;
   for (var i = 0; i < this.rolledNumbers.length; i++) {
-    totalTempScore += this.rolledNumbers[i];
+    total += this.rolledNumbers[i];
   }
-  this.tempScore = totalTempScore;
-  return this.tempScore;
+  var Score = total;
+  return this.Score;
 }
-Player.prototype.addTotalScore = function() {
-  this.totalScore += this.tempScore;
-  return this.totalScore;
+Player.prototype.addScore = function() {
+  this.total += this.score;
+  return this.total;
 }
 
 function rollDice() {
@@ -46,15 +45,15 @@ $(document).ready(function() {
     if (rolledNumber != 1) {
       rolledNumbers1.push(rolledNumber);
       player1.rolledNumbers = rolledNumbers1;
-      player1.addTempScore();
+      player1.addScore();
       $("#roundResult1").text(player1.tempScore);
     } else {
       player1.rolledNumbers = 0;
       rolledNumbers1 = [0];
       player1.addTempScore();
       $("#roundResult1").text(player1.add);
-      $("#totalResult1").text(player1.totalScore);
-      alert("You rolled 1. It is player 2's turn'");
+      $("#totalResult1").text(player1.total);
+      alert("You rolled 1. please pass the dice");
       changePlayer();
     }
 
@@ -63,9 +62,9 @@ $(document).ready(function() {
 
   $("#holdBtn1").click(function(event) {
     event.preventDefault();
-    $("#totalResult1").text(player1.addTotalScore());
+    $("#totalResult1").text(player1.addTotal());
     if (player1.totalScore >= 100) {
-      alert("Player 1 has won the game.\n Your Score is " + player1.totalScore);
+      alert("Player2 is the winner."+ "Your Score is " + player1.totalScore);
       location.reload();
     }
     $("#roundResult1").text(0);
@@ -81,22 +80,22 @@ $(document).ready(function() {
     if (rolledNumber != 1) {
       rolledNumbers2.push(rolledNumber);
       player2.rolledNumbers = rolledNumbers2;
-      $("#roundResult2").text(player2.addTempScore());
+      $("#roundResult2").text(player2.addScore());
     } else {
       player2.rolledNumbers = 0;
-      $("#roundResult2").text(player2.addTempScore());
-      $("#totalResult2").text(player2.addTotalScore());
-      alert("You rolled 1.It is player 1 's turn'");
+      $("#roundResult2").text(player2.addScore());
+      $("#totalResult2").text(player2.addTotal());
+      alert("You rolled 1.please pass the dice ");
       changePlayer();
       rolledNumbers2 = [0];
     }
   });
 
   $("#holdBtn2").click(function(event) {
-    $("#totalResult2").text(player2.addTotalScore());
+    $("#totalResult2").text(player2.addTotal());
     $("#roundResult2").text(0);
     if (player2.totalScore >= 100) {
-      alert("Player2 has won the game.\n Your score is " + player2.totalScore);
+      alert("Player2 is the winner." +"Your score is " + player2.total);
       location.reload();
     }
     rolledNumbers2 = [0];
