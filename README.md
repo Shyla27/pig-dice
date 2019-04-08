@@ -27,7 +27,7 @@ s
 You will need a browser to run this site.Most prefered google chrome or firefox.also you can clone the repo
 
 
-###Support and contact details
+### Support and contact details
 Feel free to contact me in case of anything via +254 740902027 or sheilabernicew@gmail.com
 
 License
